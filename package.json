@@ -1,0 +1,25 @@
+{
+  "name": "ruffles-bot",
+  "version": "0.0.1",
+  "description": "My own boy",
+  "main": "index.js",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "chjs": "0.0.2",
+    "file-stream-rotator": "0.0.7",
+    "fs-extra-promise": "^0.4.0",
+    "request": "^2.74.0",
+    "request-promise": "^4.1.1",
+    "require-dir": "^0.3.0",
+    "xvideos": "0.0.4"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-preset-stage-3": "^6.11.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "EduardoRFS",
+  "license": "MIT"
+}
