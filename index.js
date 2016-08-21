@@ -45,10 +45,3 @@ function isAllowed (user) {
     return false;
   return bot.commands.allowedUsers.indexOf(user.toLowerCase()) !== -1;
 }
-
-bot.commands.loadWhiteList = async function updateWhiteList () {
-  let data = await fs.readFileAsync('whitelist.json');
-  data = JSON.parse(data.toString());
-  bot.commands.allowedUsers = data.map(user => user.toLowerCase());
-};
-bot.commands.loadWhiteList();
