@@ -41,6 +41,8 @@ function onMessage (group, message, user) {
   }
 }
 function isAllowed (user) {
+  if (!bot.commands.allowedUsers)
+    return false;
   return bot.commands.allowedUsers.indexOf(user.toLowerCase()) !== -1;
 }
 

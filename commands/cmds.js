@@ -14,7 +14,9 @@ function getCommands () {
   let commands = require('require-dir')('.');
   let cmds = [];
   for (let key in commands) {
-    let names = commands[key].names || [key];
+    let command = commands[key];
+    if (command.onlyOwner) continue;
+    let names = command.names || [key];
     cmds = cmds.concat(names);
   }
   return cmds;
