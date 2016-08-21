@@ -7,6 +7,7 @@ const groups = require('./groups');
 
 const bot = new require('chjs')(groups, config.user, config.password);
 
+const bannedUsers = bot.commands.bannedUsers = ['rufflese'];
 bot.commands.allowedAnon = false;
 bot.commands.prefix = config.prefix;
 
@@ -41,5 +42,7 @@ function onMessage (group, message, user) {
   }
 }
 function isAllowed (user) {
+  if (bannedUsers.indexOf(user.toLowerCase()) !== -1)
+    return false;
   return true;
 }
