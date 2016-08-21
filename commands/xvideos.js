@@ -11,7 +11,7 @@ async function onXVideosCommand (group, message, ...args) {
   const opts = {
     url: 'http://www.xvideos.com/',
     qs: {
-      k: args.join(' ') || 'gay sex'
+      k: args.concat(['']).join(' ') || 'gay sex'
     },
     transform (body) {
       return cheerio.load(body);
