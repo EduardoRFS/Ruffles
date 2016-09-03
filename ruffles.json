@@ -1,0 +1,14 @@
+{
+  "apps" : [{
+    "name": "ruffles",
+    "script": "index.js",
+    "node_args": "--harmony_async_await",
+    "env": {
+      "DEBUG": "ruffles:*",
+      "NODE_ENV": "development"
+    },
+    "env_production" : {
+      "NODE_ENV": "production"
+    }
+  }]
+}
