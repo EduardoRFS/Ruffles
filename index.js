@@ -3,11 +3,12 @@ const commands = require('require-dir')('commands');
 const messages = require('require-dir')('messages');
 const fs = require('fs-extra-promise');
 const config = require('./config');
-const groups = require('./groups');
+let groups = require('./groups');
+groups = groups.filter((item, pos) => groups.indexOf(item) == pos);
 
 const bot = new require('chjs')(groups, config.user, config.password);
 
-const bannedUsers = bot.commands.bannedUsers = ['rufflese'];
+const bannedUsers = bot.commands.bannedUsers = ['rufflese', 'oniimaki'];
 bot.commands.allowedAnon = false;
 bot.commands.prefix = config.prefix;
 
