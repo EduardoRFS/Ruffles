@@ -4,7 +4,7 @@ const messages = require('require-dir')('messages');
 const fs = require('fs-extra-promise');
 const config = require('./config');
 let groups = require('./groups');
-groups = groups.filter((item, pos) => groups.indexOf(item) == pos);
+groups = groups.filter(filterGroup);
 
 const bot = new require('chjs')(groups, config.user, config.password);
 
@@ -46,4 +46,14 @@ function isAllowed (user) {
   if (bannedUsers.indexOf(user.toLowerCase()) !== -1)
     return false;
   return true;
+}
+
+function filterGroup (item, index, arr) {
+  const banneds = ['akuraschat', 'ch', 'debugsofty'];
+  if (banneds.indexOf(item) != -1)
+    return false;
+  return filterArray(item, index, arr);
+}
+function filterArray (item, index, arr) {
+  return arr.indexOf(item) == index;
 }
